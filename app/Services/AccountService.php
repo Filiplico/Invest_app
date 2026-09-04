@@ -43,6 +43,14 @@ class AccountService
             ->values();
     }
 
+    public function summary(Client $client): array
+    {
+        return [
+            'cash_balance' => number_format($this->balance($client), 2, '.', ''),
+            'holdings' => $this->holdings($client),
+        ];
+    }
+
     public function unitsOwned(Client $client, string $instrument): int
     {
         $quantity = $client->transactions()

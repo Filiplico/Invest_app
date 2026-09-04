@@ -12,4 +12,9 @@ class InsufficientFundsException extends AccountRuleException
             $required
         ));
     }
+
+    public function errorCode(): string
+    {
+        return 'insufficient_funds';
+    }
 }

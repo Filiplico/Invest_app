@@ -13,4 +13,9 @@ class InsufficientHoldingsException extends AccountRuleException
             $requested
         ));
     }
+
+    public function errorCode(): string
+    {
+        return 'insufficient_holdings';
+    }
 }
